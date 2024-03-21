@@ -1,10 +1,9 @@
 function CreatePokemon({ pokemonArr }) {
   return (
-    <div className="grid grid-cols-3 gap-6">
+    <div className="rounded-2xl bg-neutral-50 p-6 grid grid-cols-3 gap-4">
       {pokemonArr.map((pokemon) => {
-        console.log(pokemon);
         return (
-          <div className="flex flex-col items-center w-52 px-6 py-3 border-solid border-2 rounded-2xl shadow-zinc-300 shadow-md">
+          <div className="bg-neutral-50 flex flex-col items-center w-52 px-6 py-3 border-solid border-2 rounded-2xl shadow-zinc-300 shadow-md">
             <div className="w-full flex flex-col items-center">
               <p className="self-end text-right font-normal text-gray-400">
                 #{pokemon.id}
