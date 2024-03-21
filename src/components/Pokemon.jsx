@@ -4,7 +4,7 @@ function CreatePokemon() {
   const [pokemonList, setPokemonList] = useState([]);
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=10")
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
       .then((response) => response.json())
       .then((data) => {
         // console.log(data.results);
@@ -14,7 +14,7 @@ function CreatePokemon() {
             .then((data) => {
               return {
                 id: data.id.toString().padStart(3, "0"),
-                name: data.name,
+                name: data.name.charAt(0).toUpperCase() + data.name.slice(1),
                 image: data.sprites.front_default,
               };
             });
@@ -31,10 +31,10 @@ function CreatePokemon() {
     <div className="grid grid-cols-3 gap-6">
       {pokemonList.map((pokemon) => {
         return (
-          <div className="flex flex-col items-center w-36 p-3 border-solid border-2 rounded-2xl">
-            <div className="flex flex-col items-center">
-              <p className="w-full text-right">#{pokemon.id}</p>
-              <div className="w-28 flex">
+          <div className="flex flex-col items-center w-52 px-6 py-3 border-solid border-2 rounded-2xl shadow-zinc-300 shadow-md">
+            <div className="w-full flex flex-col items-center">
+              <p className="self-end text-right font-normal text-gray-400">#{pokemon.id}</p>
+              <div className="w-32 flex">
                 <img
                   className="w-full"
                   src={pokemon.image}
