@@ -1,14 +1,18 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import CreatePokemonCard from './components/Pokemon'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
+  const pokemonTest = {
+    id: 4,
+    name: 'Charmander',
+    image: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png'
+  }
 
   return (
     <>
-      <h1 className='text-purple-400 text-8xl font-bold italic'>Testing tailwind</h1>
+    <CreatePokemonCard pokemon={pokemonTest}/>
     </>
   )
 }
