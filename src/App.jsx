@@ -16,11 +16,12 @@ function App() {
     return <h1>Loading...</h1>;
   }
 
-
   return (
     <>
-      <CreateNavbar/>
-      <CreatePokemon pokemonArr={pokemonArr} />
+      <div className="bg-red-600 px-3 py-7">
+        <CreateNavbar />
+        <CreatePokemon pokemonArr={pokemonArr} />
+      </div>
     </>
   );
 }
